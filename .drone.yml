@@ -21,7 +21,7 @@ steps:
   image: panbook:latest
   pull: if-not-exists
   commands:
-  - panbook book -d
+  - panbook book -d --trace
   depends_on:
   - prepare
  
