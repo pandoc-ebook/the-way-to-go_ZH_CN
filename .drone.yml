@@ -9,19 +9,12 @@ steps:
 - name: prepare
   image: alpine:3.10
   commands:
-  - mv eBook src
-  - mv images/* src/images
-  - sed -i 's#../images/#images/#g' src/*.md
-  - rm -f src/frontmatter.md
-  - mv src/preface.md src/frontmatter.md
-  - sed -i '/- \[目录\].*/d' src/*.md
-  - sed -i '/^- \[上一*\].*/d' src/*.md
-  - sed -i '/^- \[下一*\].*/d' src/*.md
+  - sh ./prepare.sh
 - name: build
   image: panbook:latest
   pull: if-not-exists
   commands:
-  - panbook book -d --trace
+  - panbook book -d
   depends_on:
   - prepare
  
