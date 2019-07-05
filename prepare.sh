@@ -23,6 +23,7 @@ mv src/Discussion_about_16.10.md src/backmatter.md
 
 # 删除BOM
 sed -i '1 s/^\xef\xbb\xbf//' src/*.md
+sed -i $'1s/^\uFEFF//'  src/*.md
 
 sed -i 's/# 前言/## 前言/g' src/frontmatter.md
 sed -i 's/^### /> /g' src/frontmatter.md
