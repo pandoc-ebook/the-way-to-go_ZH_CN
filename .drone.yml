@@ -10,13 +10,13 @@ steps:
   image: panbook:latest
   pull: if-not-exists
   commands:
-  - make ctexbook
+  - MEM=--memory=800m make ctexbook
   
 - name: elegantbook
   image: panbook:latest
   pull: if-not-exists
   commands:
-  - make elegantbook
+  - MEM=--memory=800m make elegantbook
   depends_on:
   - ctexbook
 
