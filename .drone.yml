@@ -6,18 +6,20 @@ workspace:
   path: the-way-to-go_ZH_CN
 
 steps:
-- name: prepare
-  image: alpine:3.10
-  commands:
-  - sh ./prepare.sh
-- name: build
+- name: ctexbook
   image: panbook:latest
   pull: if-not-exists
   commands:
-  - panbook book -d
+  - make ctexbook
+  
+ - name: elegantbook
+  image: panbook:latest
+  pull: if-not-exists
+  commands:
+  - make elegantbook
   depends_on:
-  - prepare
- 
+  - ctexbook
+
 - name: publish
   image: annprog/rsync:latest
   pull: if-not-exists
@@ -25,4 +27,5 @@ steps:
     src: build/*.pdf
     dest: 172.17.0.1::panbook
   depends_on:
-  - build
+  - ctexbook
+  - elegantbook

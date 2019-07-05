@@ -1,11 +1,20 @@
 COVER ?= R
 DEVICE ?= pc
-all: ctexbook elegantbook
+DIVISION = --top-level-division=part
+DEBUG ?= -d
+HIGHLIGHT = --highlight-style=tango
+all: ctexbook elegantbook clean
 
-ctexbook:
-	panbook book -V cover:$(COVER) -V device:$(DEVICE)
-elegantbook:
-	panbook book --style=elegantbook -V device:$(DEVICE)
+prepare:
+	rm -fr src
+	rm -fr directory.md
+	./prepare.sh
+ctexbook: prepare
+	panbook book -V cover:$(COVER) -V device:$(DEVICE) $(DIVISION) $(DEBUG) $(HIGHLIGHT)
+elegantbook: prepare
+	panbook book --style=elegantbook -V device:$(DEVICE) $(DIVISION) $(DEBUG) $(HIGHLIGHT)
 
 clean:
 	panbook clean
+	rm -fr src
+	rm -fr directory.md
