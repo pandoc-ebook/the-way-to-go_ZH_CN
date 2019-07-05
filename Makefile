@@ -8,7 +8,7 @@ all: ctexbook elegantbook clean
 prepare:
 	rm -fr src
 	rm -fr directory.md
-	./prepare.sh
+	bash ./prepare.sh
 ctexbook: prepare
 	panbook book -V cover:$(COVER) -V device:$(DEVICE) $(DIVISION) $(DEBUG) $(HIGHLIGHT)
 elegantbook: prepare
