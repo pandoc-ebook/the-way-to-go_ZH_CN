@@ -12,7 +12,7 @@ steps:
   commands:
   - make ctexbook
   
- - name: elegantbook
+- name: elegantbook
   image: panbook:latest
   pull: if-not-exists
   commands:
