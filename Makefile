@@ -13,7 +13,7 @@ prepare:
 ctexbook: prepare
 	panbook book -V cover:$(COVER) -V device:$(DEVICE) $(DIVISION) $(DEBUG) $(HIGHLIGHT) $(MEM)
 elegantbook: prepare
-	panbook book --style=elegantbook -V device:$(DEVICE) -V cover:images/cover.jpg -V logo:images/logo.png $(DIVISION) $(DEBUG) $(HIGHLIGHT) $(MEM)
+	panbook book --style=elegantbook -V device:$(DEVICE) -V cover:images/background.jpg -V logo:images/logo.png $(DIVISION) $(DEBUG) $(HIGHLIGHT) $(MEM)
 
 clean:
 	panbook clean
