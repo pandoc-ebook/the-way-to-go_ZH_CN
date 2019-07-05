@@ -2,8 +2,10 @@
 
 cp -r eBook src
 cp images/* src/images
+cp cover/* src/images
 mv src/directory.md .
 TOC="directory.md"
+dos2unix src/*.md
 
 sed -i 's#../images/#images/#g' src/*.md
 cat >  src/frontmatter.md <<EOF
