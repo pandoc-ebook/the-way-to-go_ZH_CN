@@ -10,7 +10,7 @@ dos2unix src/*.md
 sed -i 's#../images/#images/#g' src/*.md
 cat >  src/frontmatter.md <<EOF
 ## 说明
-本仓库仅使用 [PanBook](https://github.com/annProg/PanBook) 排版此电子书。
+本[仓库](https://github.com/pandoc-ebook/the-way-to-go_ZH_CN)仅使用 [PanBook](https://github.com/annProg/PanBook) 排版此电子书。
 
 最新版本及问题反馈请访问 [上游仓库](https://github.com/Unknwon/the-way-to-go_ZH_CN)。
 

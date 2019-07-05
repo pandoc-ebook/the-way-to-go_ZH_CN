@@ -7,7 +7,7 @@ author:          # 作者（数组）
 date: \today     # 日期
 lof: false        # 是否生成插图列表页
 lot: false        # 是否生成表格列表页
-homepage: https://github.com/annProg/PanBook
+homepage: https://github.com/pandoc-ebook/the-way-to-go_ZH_CN
 publisher: PanBook       # epub用
 rights: © 2019 Ivo Balbaert, CC BY-SA 3.0   # epub用
 cover-image: images/cover.png    # epub用
